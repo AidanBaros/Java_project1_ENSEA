@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.awt.Graphics;
 import java.awt.geom.Rectangle2D;
 
-public class DynamicSprite extends SolidSprite{
+public class DynamicSprite extends SolidSprite {
     Boolean isWalking;
     Double speed;
     final int spriteSheetNumberOfColumn;
@@ -12,13 +12,14 @@ public class DynamicSprite extends SolidSprite{
     int index;
     int attitude;
 
-    public DynamicSprite(Image image, int height, int width, int x, int y){
+    public DynamicSprite(Image image, int height, int width, int x, int y,
+                         double speed, int timeBetweenFrame, Direction direction) {
         super(image, height, width, x, y);
-        isWalking = false;
-        speed = 5.0;
-        spriteSheetNumberOfColumn = 10;
-        timeBetweenFrame = 200;
-        this.direction = Direction.SOUTH;
+        this.isWalking = false;
+        this.speed = speed;
+        this.spriteSheetNumberOfColumn = 10;
+        this.timeBetweenFrame = timeBetweenFrame;
+        this.direction = direction;
     }
 
     public void setDirection(Direction direction){

@@ -22,7 +22,16 @@ public class Main {
         displayZoneFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         heroImage = ImageIO.read(new File("Project1/resources/heroTileSheetLowRes.png"));
-        hero = new DynamicSprite(heroImage, 48, 50, 100, 300);
+        hero = new DynamicSpriteBuilder()
+        .setImage(heroImage)
+        .setHeight(48)
+        .setWidth(50)
+        .setX(100)
+        .setY(300)
+        .setSpeed(5.0)
+        .setTimeBetweenFrame(200)
+        .setDirection(Direction.SOUTH)
+        .build();
 
         renderEngine = new RenderEngine();
         physicsEngine = new PhysicsEngine();
